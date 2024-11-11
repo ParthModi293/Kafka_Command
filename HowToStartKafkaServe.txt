@@ -1,0 +1,40 @@
+(1) First We have to Start ZookeeperServer:----
+
+.\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties
+
+
+(2) Now We have to Start Kafka Server:----
+
+.\bin\windows\kafka-server-start.bat .\config\server.properties
+
+
+(3) For Create Topic :-----
+
+.\bin\windows\kafka-topic.bat --bootstarp-server localhost:9092 --create --topic [topicName] --partitions 3 replication.factor 1
+
+
+
+(4) for show List OfTopics:---
+
+.\bin\windows\kafka-topic.bat --bootstrap-server localhost:9092 --list
+
+
+
+(5) for Show Full Description of Particular Topic:----
+
+.\bin\windows\kafka-topic.bat --bootstrap-server localhost:9092 --describe --topic [topicName]
+
+
+(6) For Create Producer :-----
+
+.\bin\windows\kafka-console-producer.bat --broker-list localhost:9092 --topic parthNew
+
+
+(7) For Create Consumer :-----
+
+.\bin\windows\kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic parthNew --from-beginning
+
+kafka-topics.sh --create --zookeeper zookeeper:2180 --replication-factor 1 --partitions 1 --topic dockertopic
+
+
+
